@@ -11,5 +11,7 @@ config :k8_cluster, K8ClusterWeb.Endpoint,
 # Do not print debug messages in production
 config :logger, level: :info
 
+config :k8_cluster, dev_routes: true
+
 # Runtime production configuration, including reading
 # of environment variables, is done on config/runtime.exs.
