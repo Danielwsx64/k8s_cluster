@@ -16,3 +16,10 @@ Ready to run in production? Please [check our deployment guides](https://hexdocs
   * Docs: https://hexdocs.pm/phoenix
   * Forum: https://elixirforum.com/c/phoenix-forum
   * Source: https://github.com/phoenixframework/phoenix
+
+## Run Docker
+
+Local Image
+```sh
+docker run --rm -it --env-file='.env' -p 4000:4000 k8_cluster:v1
+```

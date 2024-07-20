@@ -35,5 +35,5 @@ k8_cluster-*.tar
 npm-debug.log
 /assets/node_modules/
 
-
 .envrc
+.env
