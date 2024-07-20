@@ -10,7 +10,7 @@ defmodule K8Cluster.MixProject do
       start_permanent: Mix.env() == :prod,
       aliases: aliases(),
       deps: deps(),
-      preferred_cli_env: [deploy: :prod]
+      preferred_cli_env: [deploy: :prod, compile: :prod]
     ]
   end
 
