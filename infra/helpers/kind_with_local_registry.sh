@@ -20,14 +20,17 @@ fi
 # https://github.com/kubernetes-sigs/kind/issues/2875
 # https://github.com/containerd/containerd/blob/main/docs/cri/config.md#registry-configuration
 # See: https://github.com/containerd/containerd/blob/main/docs/hosts.md
-cat <<EOF | kind create cluster --name=$cluster_name --config=-
-kind: Cluster
-apiVersion: kind.x-k8s.io/v1alpha4
-containerdConfigPatches:
-- |-
-  [plugins."io.containerd.grpc.v1.cri".registry]
-    config_path = "/etc/containerd/certs.d"
+
+if [ "$(kind get clusters | grep $cluster_name)" != $cluster_name ]; then
+  cat <<EOF | kind create cluster --name=$cluster_name --config=-
+  kind: Cluster
+  apiVersion: kind.x-k8s.io/v1alpha4
+  containerdConfigPatches:
+  - |-
+    [plugins."io.containerd.grpc.v1.cri".registry]
+      config_path = "/etc/containerd/certs.d"
 EOF
+fi
 
 # 3. Add the registry config to the nodes
 #

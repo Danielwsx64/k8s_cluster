@@ -1,0 +1,6 @@
+kind: Namespace
+apiVersion: v1
+metadata:
+  name: k8-cluster
+  labels:
+    name: k8-cluster
