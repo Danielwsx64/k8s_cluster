@@ -9,7 +9,8 @@ defmodule K8Cluster.MixProject do
       elixirc_paths: elixirc_paths(Mix.env()),
       start_permanent: Mix.env() == :prod,
       aliases: aliases(),
-      deps: deps()
+      deps: deps(),
+      preferred_cli_env: [deploy: :prod]
     ]
   end
 
@@ -71,6 +72,10 @@ defmodule K8Cluster.MixProject do
         "tailwind k8_cluster --minify",
         "esbuild k8_cluster --minify",
         "phx.digest"
+      ],
+      deploy: [
+        "assets.deploy",
+        "release"
       ]
     ]
   end
