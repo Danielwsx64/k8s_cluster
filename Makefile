@@ -28,4 +28,7 @@ logs:
 stop_logs:
 	@./infra/helpers/k8s_pods_logs.sh stop
 
+rollout:
+	@./infra/helpers/rollout_new_verions.sh
+
 build_and_run_docker: build_docker run_docker
