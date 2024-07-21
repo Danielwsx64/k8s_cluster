@@ -1,3 +1,3 @@
 #!/bin/sh
 
-docker build . --tag $(./infra/helpers/image_name.sh)
+docker build . --tag $(./infra/helpers/image_name.sh $1)
