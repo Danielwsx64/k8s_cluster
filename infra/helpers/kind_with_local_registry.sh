@@ -4,7 +4,7 @@ set -o errexit
 # 1. Create registry container unless it already exists
 reg_name='kind-registry'
 reg_port='5001'
-cluster_name="$(./infra/helpers/app_name.sh | sed 's/_/-/' )"
+cluster_name="$(./infra/helpers/app_name.sh k8s )"
 
 if [ "$(docker inspect -f '{{.State.Running}}' "${reg_name}" 2>/dev/null || true)" != 'true' ]; then
   docker run \

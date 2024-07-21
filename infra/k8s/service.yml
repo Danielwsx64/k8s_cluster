@@ -7,7 +7,8 @@ spec:
   selector:
     app: k8-cluster
   ports:
-    - protocol: TCP
+    - name: k8-cluster-web 
+      protocol: TCP
       port: 4000
       targetPort: 4000
   type: LoadBalancer
